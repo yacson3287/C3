@@ -297,7 +297,8 @@ public class vistaCalculo extends pantallaBase {
 			lwL.setColor(Color.RED);
 		} else {
 			try {
-				lw_lv = Float.parseFloat(lwt.getText());
+				String aux = lwt.getText().toString().replaceAll(",", "\\.");
+				lw_lv = Float.parseFloat(aux);
 			} catch (Exception e) {
 				ok = false;
 				errores.add("*El dato ingresado en Lower Level no es valido ");
@@ -310,7 +311,8 @@ public class vistaCalculo extends pantallaBase {
 			dsL.setColor(Color.RED);
 		} else {
 			try {
-				dist = Float.parseFloat(dst.getText());
+				String aux = dst.getText().toString().replaceAll(",", "\\.");
+				dist = Float.parseFloat(aux);
 			} catch (Exception e) {
 				errores.add("*The data entered in Distance is not valid");
 				dsL.setColor(Color.RED);
@@ -323,7 +325,8 @@ public class vistaCalculo extends pantallaBase {
 		} else {
 
 			try {
-				Q = Float.parseFloat(Qt.getText());
+				String aux = Qt.getText().toString().replaceAll(",", "\\.");
+				Q = Float.parseFloat(aux);
 
 			} catch (Exception e) {
 				errores.add("*The data entered in Q is not valid");
@@ -362,8 +365,6 @@ public class vistaCalculo extends pantallaBase {
 	public void dispose() {
 		// TODO Auto-generated method stub
 		super.dispose();
-		
-			
 		stage.dispose();
 	}
 
